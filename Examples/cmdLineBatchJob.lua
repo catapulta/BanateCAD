@@ -30,7 +30,8 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.4.8k.png',
 		-- Filename = 'Examples/map/moonBump5AddInvertedColorMap2.4.8k.png',
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.84k.png',
-		Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.6k.png',
+		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.6k.png',
+		Filename = '/lua/Examples/map/flat.3.6k.png',
 		Interpolate = true,
 	})
 	-- smoothen surface
@@ -40,7 +41,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonColorMap.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.4.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.3.84k.png',
-		Filename = 'Examples/map/moonColorMap.3.6k.png',
+		Filename = '/lua/Examples/map/moonColorMap.3.6k.png',
 		Interpolate = true,
 	})
 	-- smoothen interior shape

@@ -11,7 +11,7 @@
 # run command
 #docker run -it -v /path/to/BanateCAD:/lua moononournation/debian-imagemagick-lua-meshlab:1.0.1
 
-FROM debian:jessie-slim
+FROM debian:bookworm-slim
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -51,7 +51,7 @@ RUN apt-get update \
     && rm lua-gd_2.0.33r3-1_*.deb \
     && mkdir iup-3.27-Lua51_Linux319_64_lib \
     && cd iup-3.27-Lua51_Linux319_64_lib \
-    && curl -L "https://ayera.dl.sourceforge.net/project/iup/3.27/Linux%20Libraries/Lua51/iup-3.27-Lua51_Linux319_64_lib.tar.gz"  | tar -xzf - \
+    && curl -L "https://master.dl.sourceforge.net/project/iup/3.27/Linux%20Libraries/Lua51/iup-3.27-Lua51_Linux319_64_lib.tar.gz"  | tar -xzf - \
     && ./install \
     && cd .. \
     && rm -r iup-3.27-Lua51_Linux319_64_lib \
@@ -62,7 +62,6 @@ RUN apt-get update \
 		curl \
         debhelper \
 		gcc \
-        git \
 		libreadline-dev \
 		libssl-dev \
 		make \
@@ -70,5 +69,10 @@ RUN apt-get update \
         unzip \
     && apt-get autoremove -y \
     && rm -r /var/lib/apt/lists/*
+
+COPY .. /lua
+
+# add settings for memory, map, width, height, area, and disk
+RUN mv /lua/Docker/policy.xml /etc/ImageMagick-6/policy.xml
 
 WORKDIR /lua
