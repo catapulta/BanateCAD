@@ -59,7 +59,6 @@ RUN apt-get update \
 		build-essential \
 		ca-certificates \
         cmake \
-		curl \
         debhelper \
 		gcc \
 		libreadline-dev \
@@ -70,9 +69,9 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -r /var/lib/apt/lists/*
 
-COPY .. /lua
+COPY . /lua
 
 # add settings for memory, map, width, height, area, and disk
-RUN mv /lua/Docker/policy.xml /etc/ImageMagick-6/policy.xml
+RUN cp /lua/Docker/policy.xml /etc/ImageMagick-6/policy.xml
 
 WORKDIR /lua
