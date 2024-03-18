@@ -10,17 +10,17 @@ echo "download bump map from NASA"
 
 
 echo "shrink color map"
-# convert lroc_color_poles.tif -sample 8000x4000 -normalize -type grayscale moonColorMap.8k.png
+convert lroc_color_poles.tif -sample 8000x4000 -normalize -type grayscale moonColorMap.8k.png
 # convert lroc_color_poles.tif -sample 4800x2400 -normalize -type grayscale moonColorMap.4.8k.png
 # convert lroc_color_poles.tif -sample 3840x1920 -normalize -type grayscale moonColorMap.3.84k.png
-convert lroc_color_poles.tif -sample 3600x1800 -normalize -type grayscale moonColorMap.3.6k.png
+# convert lroc_color_poles.tif -sample 3600x1800 -normalize -type grayscale moonColorMap.3.6k.png
 
 echo "shrink bump map"
 # convert ldem_64_uint.tif -sample 8000x4000 -normalize -type grayscale moonBumpMap.8k.png
 # convert ldem_64_uint.tif -sample 4800x2400 -normalize -type grayscale moonBumpMap.4.8k.png
 # convert ldem_64_uint.tif -sample 3840x1920 -normalize -type grayscale moonBumpMap.3.84k.png
 # convert ldem_64_uint.tif -sample 3600x1800 -normalize -type grayscale moonBumpMap.3.6k.png
-convert -size 3600x1800 -depth 16 xc:black flat.3.6k.png
+convert -size 8000x4000 -depth 16 xc:black flat.8k.png
 
 # echo "combine color and bump map"
 # convert moonColorMap.8k.png -negate +level 0,50% invertedColorMap.8k.0.5.tif

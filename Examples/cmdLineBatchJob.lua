@@ -31,7 +31,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonBump5AddInvertedColorMap2.4.8k.png',
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.84k.png',
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.6k.png',
-		Filename = '/lua/Examples/map/flat.3.6k.png',
+		Filename = '/lua/Examples/map/flat.8k.png',
 		Interpolate = true,
 	})
 	-- smoothen surface
@@ -41,7 +41,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonColorMap.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.4.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.3.84k.png',
-		Filename = '/lua/Examples/map/moonColorMap.3.6k.png',
+		Filename = '/lua/Examples/map/moonColorMap.8k.png',
 		Interpolate = true,
 	})
 	-- smoothen interior shape
@@ -120,7 +120,7 @@ local inchesToMmConstant = 25.4
 -- GenerateMoon(1.25 * inchesToMmConstant, 240, 0.3, 0.2, 0.5, 'moon_lamp_1.25_inches', false)
 
 -- FDM 3D printing (high details, 0.25 mm extruder)
-GenerateMoon(1.33 * inchesToMmConstant, 240, 0.26, 0.64, 0.64, 'moon_lamp_1.33_inches', false)
+-- GenerateMoon(1.33 * inchesToMmConstant, 240, 0.26, 0.64, 0.64, 'moon_lamp_1.33_inches', false)
 
 -- FDM 3D printing (high details, 0.3 mm extruder)
 -- GenerateMoon(1.00 * inchesToMmConstant, 384, 0.3, 0.8, 0.8, 'moon_lamp_1.00_inches', false)
@@ -152,12 +152,13 @@ GenerateMoon(1.33 * inchesToMmConstant, 240, 0.26, 0.64, 0.64, 'moon_lamp_1.33_i
 -- GenerateMoon(4.5 * inchesToMmConstant, 360, 0.5, 0.8, 0.8, 'moon_lamp_4.5_inches', false)
 
 -- require 8k map files
--- GenerateMoon(5.0 * inchesToMmConstant, 400, 0.5, 0.8, 0.8, 'moon_lamp_5.0_inches', false)
+GenerateMoon(5.0 * inchesToMmConstant, 400, 0.5, 0.8, 0.8, 'moon_lamp_5.0_inches', false)
 -- GenerateMoon(6.0 * inchesToMmConstant, 480, 0.5, 0.8, 0.8, 'moon_lamp_6.0_inches', false)
 -- GenerateMoon(7.0 * inchesToMmConstant, 560, 0.5, 0.8, 0.8, 'moon_lamp_7.0_inches', false)
 -- GenerateMoon(8.0 * inchesToMmConstant, 640, 0.5, 0.8, 0.8, 'moon_lamp_8.0_inches', false)
 -- GenerateMoon(9.0 * inchesToMmConstant, 720, 0.5, 0.8, 0.8, 'moon_lamp_9.0_inches', false)
 -- GenerateMoon(10 * inchesToMmConstant,  800, 0.5, 0.8, 0.8, 'moon_lamp_10_inches', false)
+-- GenerateMoon(218, 720, 0.5, 0.8, 0.8, 'moon_lamp_218mm', false)
 
 -- fixed refinement level to cater Thingiverse 262144000 size limit
 -- GenerateMoon(5 * inchesToMmConstant, 360, 0.5, 0.8, 0.8, 'moon_lamp_5_inches_refinement_level_360', false)
