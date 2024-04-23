@@ -31,7 +31,8 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonBump5AddInvertedColorMap2.4.8k.png',
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.84k.png',
 		-- Filename = 'Examples/map/moonBumpAddInvertedColorMap.3.6k.png',
-		Filename = '/lua/Examples/map/flat.8k.png',
+		-- Filename = '/lua/Examples/map/flat.8k.png',
+		Filename = 'Examples/map/earthBumpAddInvertedColorMap.8k.png',
 		Interpolate = true,
 	})
 	-- smoothen surface
@@ -41,7 +42,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		-- Filename = 'Examples/map/moonColorMap.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.4.8k.png',
 		-- Filename = 'Examples/map/moonColorMap.3.84k.png',
-		Filename = '/lua/Examples/map/moonColorMap.8k.png',
+		Filename = 'Examples/map/earthColorMap.8k.png',
 		Interpolate = true,
 	})
 	-- smoothen interior shape
@@ -152,13 +153,17 @@ local inchesToMmConstant = 25.4
 -- GenerateMoon(4.5 * inchesToMmConstant, 360, 0.5, 0.8, 0.8, 'moon_lamp_4.5_inches', false)
 
 -- require 8k map files
-GenerateMoon(5.0 * inchesToMmConstant, 400, 0.5, 0.8, 0.8, 'moon_lamp_5.0_inches', false)
+-- GenerateMoon(3.0 * inchesToMmConstant, 480, 0.01, 0.19, 0.0, 'temp', false)
+-- GenerateMoon(5.0 * inchesToMmConstant, 400, 0.5, 0.8, 0.8, 'earth_lamp_blur_5.0_inches', false)
 -- GenerateMoon(6.0 * inchesToMmConstant, 480, 0.5, 0.8, 0.8, 'moon_lamp_6.0_inches', false)
 -- GenerateMoon(7.0 * inchesToMmConstant, 560, 0.5, 0.8, 0.8, 'moon_lamp_7.0_inches', false)
 -- GenerateMoon(8.0 * inchesToMmConstant, 640, 0.5, 0.8, 0.8, 'moon_lamp_8.0_inches', false)
 -- GenerateMoon(9.0 * inchesToMmConstant, 720, 0.5, 0.8, 0.8, 'moon_lamp_9.0_inches', false)
 -- GenerateMoon(10 * inchesToMmConstant,  800, 0.5, 0.8, 0.8, 'moon_lamp_10_inches', false)
--- GenerateMoon(218, 720, 0.5, 0.8, 0.8, 'moon_lamp_218mm', false)
+-- GenerateMoon(218, 720, 0.5, 0.8, 0.8, 'temp', false) -- 218mm
+-- GenerateMoon(218, 360, 0.42*2.01, 0.8, 0.8, 'temp', false) -- 218mm
+-- 0.65w, 0.4 minimum wall width, 0 wall transition length 
+GenerateMoon(218, 360, 0.5, 0.8, 0.8, 'temp', false) -- 218mm
 
 -- fixed refinement level to cater Thingiverse 262144000 size limit
 -- GenerateMoon(5 * inchesToMmConstant, 360, 0.5, 0.8, 0.8, 'moon_lamp_5_inches_refinement_level_360', false)

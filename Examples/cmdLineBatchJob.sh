@@ -15,12 +15,12 @@ mkdir -p Examples/stl
 
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_2.0_inches.stl -o Examples/stl/moon_lamp_2.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_2.5_inches.stl -o Examples/stl/moon_lamp_2.5_inches.stl
-# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_3.0_inches.stl -o Examples/stl/moon_lamp_3.0_inches.stl
+xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/temp.stl -o Examples/stl/earth_lamp_blur_218mm.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_3.5_inches.stl -o Examples/stl/moon_lamp_3.5_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_4.0_inches.stl -o Examples/stl/moon_lamp_4.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_4.5_inches.stl -o Examples/stl/moon_lamp_4.5_inches.stl
 
-xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_5.0_inches.stl -o Examples/stl/moon_lamp_5.0_inches.stl
+# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/earth_lamp_blur_5.0_inches.stl -o Examples/stl/earth_lamp_blur_5.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_6.0_inches.stl -o Examples/stl/moon_lamp_6.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_7.0_inches.stl -o Examples/stl/moon_lamp_7.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_8.0_inches.stl -o Examples/stl/moon_lamp_8.0_inches.stl
@@ -60,4 +60,4 @@ xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_5.0_in
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_4.75_inches.stl -o Examples/stl/moon_lamp_4.75_inches_Y165.stl -s Examples/mlx/MeshLabRotateY165.mlx
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_5.0_inches.stl -o Examples/stl/moon_lamp_5.0_inches_Y165.stl -s Examples/mlx/MeshLabRotateY165.mlx
 
-# rm Examples/*.stl
+rm Examples/*.stl

@@ -69,9 +69,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -r /var/lib/apt/lists/*
 
-COPY . /lua
-
 # add settings for memory, map, width, height, area, and disk
-RUN cp /lua/Docker/policy.xml /etc/ImageMagick-6/policy.xml
+COPY ./Docker/policy.xml /etc/ImageMagick-6/policy.xml
 
 WORKDIR /lua
