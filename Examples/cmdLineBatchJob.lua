@@ -46,7 +46,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 		Interpolate = true,
 	})
 	-- smoothen interior shape
-	thicknessMap.Blur = math.max(math.ceil(((thicknessMap.Width / 10 / refinementLevel) - 1) / 2), 0)
+	-- thicknessMap.Blur = math.max(math.ceil(((thicknessMap.Width / 10 / refinementLevel) - 1) / 2), 0)
 
 	local vertsampler = shape_ellipsoid({
 		XRadius = r,
@@ -67,7 +67,7 @@ function GenerateMoon(outputSize, refinementLevel, basicWallSize, basicShadowSiz
 	-- 	USteps = refinementLevel * 10,
 	-- 	WSteps = refinementLevel * 5,
 		VertexFunction = dispSampler,
-		Thickness = -(basicShadowSize + (outputSize * variableShadowFactor)),
+		Thickness = -basicShadowSize,
 		ThicknessMap = thicknessMap,
 		BasicThickness = -basicWallSize,
 	})
@@ -154,16 +154,24 @@ local inchesToMmConstant = 25.4
 
 -- require 8k map files
 -- GenerateMoon(3.0 * inchesToMmConstant, 480, 0.01, 0.19, 0.0, 'temp', false)
--- GenerateMoon(5.0 * inchesToMmConstant, 400, 0.5, 0.8, 0.8, 'earth_lamp_blur_5.0_inches', false)
+-- GenerateMoon(5.0 * inchesToMmConstant, 480, 0.5, 0.8, 0.8, 'temp', false)
+
+
+local basicWallSize = 0.68  -- 0.24*2 / (sqrt 2 /2)
+-- original formula basicShadowSize(=0.8) + (outputSize * variableShadowFactor(=0.8))
+local basicShadowSize = 0.2 + 5 * inchesToMmConstant * variableShadowFactor / 3   -- use 1/2 for PETG matte
+local basicHeightSize = 0.8
+-- GenerateMoon(5.0 * inchesToMmConstant, 480, basicWallSize, basicShadowSize, basicHeightSize, 'temp', false)  -- abs
 -- GenerateMoon(6.0 * inchesToMmConstant, 480, 0.5, 0.8, 0.8, 'moon_lamp_6.0_inches', false)
 -- GenerateMoon(7.0 * inchesToMmConstant, 560, 0.5, 0.8, 0.8, 'moon_lamp_7.0_inches', false)
 -- GenerateMoon(8.0 * inchesToMmConstant, 640, 0.5, 0.8, 0.8, 'moon_lamp_8.0_inches', false)
 -- GenerateMoon(9.0 * inchesToMmConstant, 720, 0.5, 0.8, 0.8, 'moon_lamp_9.0_inches', false)
 -- GenerateMoon(10 * inchesToMmConstant,  800, 0.5, 0.8, 0.8, 'moon_lamp_10_inches', false)
 -- GenerateMoon(218, 720, 0.5, 0.8, 0.8, 'temp', false) -- 218mm
--- GenerateMoon(218, 360, 0.42*2.01, 0.8, 0.8, 'temp', false) -- 218mm
 -- 0.65w, 0.4 minimum wall width, 0 wall transition length 
-GenerateMoon(218, 360, 0.5, 0.8, 0.8, 'temp', false) -- 218mm
+-- GenerateMoon(218, 640, 0.5, 0.8, 0.8, 'temp', false) -- 218mm
+-- GenerateMoon(218, 480, 0.5, 0.8, 0.8, 'temp', false) -- 218mm, petg matte
+GenerateMoon(218, 480, basicWallSize, basicShadowSize, basicHeightSize, 'temp', false) -- 218mm, abs
 
 -- fixed refinement level to cater Thingiverse 262144000 size limit
 -- GenerateMoon(5 * inchesToMmConstant, 360, 0.5, 0.8, 0.8, 'moon_lamp_5_inches_refinement_level_360', false)

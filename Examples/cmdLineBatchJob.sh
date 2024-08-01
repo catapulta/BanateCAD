@@ -2,6 +2,9 @@
 
 set -e
 
+sh Examples/map/convert_script.sh
+
+echo "Building mesh..."
 lua Examples/cmdLineBatchJob.lua
 
 mkdir -p Examples/stl
@@ -15,18 +18,18 @@ mkdir -p Examples/stl
 
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_2.0_inches.stl -o Examples/stl/moon_lamp_2.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_2.5_inches.stl -o Examples/stl/moon_lamp_2.5_inches.stl
-xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/temp.stl -o Examples/stl/earth_lamp_blur_218mm.stl
+xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/temp.stl -o Examples/stl/earth_lamp-latest.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_3.5_inches.stl -o Examples/stl/moon_lamp_3.5_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_4.0_inches.stl -o Examples/stl/moon_lamp_4.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_4.5_inches.stl -o Examples/stl/moon_lamp_4.5_inches.stl
 
-# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/earth_lamp_blur_5.0_inches.stl -o Examples/stl/earth_lamp_blur_5.0_inches.stl
+# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/temp.stl -o Examples/stl/earth_lamp_5.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_6.0_inches.stl -o Examples/stl/moon_lamp_6.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_7.0_inches.stl -o Examples/stl/moon_lamp_7.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_8.0_inches.stl -o Examples/stl/moon_lamp_8.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_9.0_inches.stl -o Examples/stl/moon_lamp_9.0_inches.stl
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_10_inches.stl -o Examples/stl/moon_lamp_10_inches.stl
-# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_218mm.stl -o Examples/stl/moon_lamp_218mm.stl
+# xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/temp.stl -o Examples/stl/moon_lamp_218mm.stl
 
 #fixed refinement level to cater Thingiverse 262144000 size limit
 # xvfb-run -a -s "-screen 0 800x600x24" meshlabserver -i Examples/moon_lamp_5_inches_refinement_level_360.stl -o Examples/stl/moon_lamp_5_inches_refinement_level_360.stl
