@@ -12,18 +12,18 @@ function Icosahedron:_init(params)
 	Shape._init(self, params)
 
 	self.RefinementLevel = params.RefinementLevel or 1
-	self.VertexFunction = params.VertexFunction or nil
+	self.VertexFunction = params.VertexFunction or nil  -- height map
 	self.ColorSampler = params.ColorSampler or nil
-	self.Thickness = params.Thickness or nil
-	self.ThicknessMap = params.ThicknessMap or nil
-	self.BasicThickness = params.BasicThickness or 0
+	self.Thickness = params.Thickness or nil  -- shadow depth
+	self.ThicknessMap = params.ThicknessMap or nil  -- color map
+	self.BasicThickness = params.BasicThickness or 0  -- wall depth
 end
 
 function Icosahedron.WriteFace(self, writer, u1, w1, u2, w2, u3, w3)
 	local v1, n1 = self.VertexFunction:GetVertex(u1, w1)
 	local v2, n2 = self.VertexFunction:GetVertex(u2, w2)
 	local v3, n3 = self.VertexFunction:GetVertex(u3, w3)
-	writer:WriteFace({v1, v2, v3}, nil)
+	writer:WriteFace({v1, v2, v3}, nil)  -- writes height map
 
 	if self.Thickness ~= nil then
 		local iv1, iv2, iv3
@@ -41,7 +41,7 @@ function Icosahedron.WriteFace(self, writer, u1, w1, u2, w2, u3, w3)
 			iv2 = vec3_add(vec3_mults(n2, self.Thickness), v2)
 			iv3 = vec3_add(vec3_mults(n3, self.Thickness), v3)
 		end
-		writer:WriteFace({iv1, iv3, iv2}, nil)
+		writer:WriteFace({iv1, iv3, iv2}, nil)  -- writes color map
 	end
 end
 
