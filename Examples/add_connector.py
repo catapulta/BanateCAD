@@ -161,13 +161,13 @@ def load_stl(file_path, name):
 # Main script
 print("Starting main script")
 
-lamp = load_stl_decimate("/Users/aldo/BanateCAD/Examples/stl/earth_lamp_218mm-0.2n-Lblur.stl", "lamp", False, 0.2)
+lamp = load_stl_decimate("/Users/aldo/code/BanateCAD/Examples/stl/earth_lamp_218mm-0.2n-Lblur.stl", "lamp", False, 0.2)
 # slice_bottom(lamp, 8.42)
 # slice_bottom(lamp, 11)
 # slice_bottom(lamp, (11+8.42)/2)
 move_to_xy_plane(lamp)
 
-connector = load_stl("/Users/aldo/BanateCAD/Examples/stl/female_adapter-1.114x.stl", "connector")
+connector = load_stl("/Users/aldo/code/BanateCAD/Examples/stl/female_adapter-1.114x.stl", "connector")
 scale_object(connector, 0.9546)  # scale to fit 218mm
 
 # Create cylinder cutout for connector
@@ -188,7 +188,7 @@ bpy.ops.object.select_all(action='DESELECT')
 lamp.select_set(True)
 bpy.context.view_layer.objects.active = lamp
 
-output_path = "/Users/aldo/BanateCAD/Examples/stl/earth_lamp-218mm_adapter.stl"
+output_path = "/Users/aldo/code/BanateCAD/Examples/stl/earth_lamp-218mm_adapter.stl"
 print(f"Exporting result to: {output_path}")
 bpy.ops.export_mesh.stl(filepath=output_path, use_selection=True)
 
